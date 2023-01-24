@@ -1,0 +1,123 @@
+.header {
+    height: 54px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-logo {
+        padding: 7px;
+        cursor: pointer;
+    }
+}
+
+.header-nav{
+    height: 100%;
+
+    #header-nav__input {
+        display: none;
+    }
+
+    &__pc {
+        &-list {
+            height: 100%;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+        }
+    
+        &-item {
+            padding: 0 28px;
+            height: 100%;
+            line-height: 54px;
+            user-select: none;
+            color: var(--color-dark-grayish-blue);
+    
+            &:hover {
+                cursor: pointer;
+                color: var(--color-primary-red);
+            }
+        }
+    }
+
+    &__menu-btn {
+        display: none;
+        width: 60px;
+        height: 54px;
+        cursor: pointer;
+        
+        & svg {
+            margin: 18.5px 10px;
+        }
+    }
+    &__overlay {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.4);
+        display: none;
+    }
+    &__close-btn {
+        position: absolute;
+        top: 20px;
+        right: 12px;
+        width: 40px;
+        height: 41px;
+        cursor: pointer;
+        
+        & svg {
+            margin: 4px 4px;
+        }
+    }
+    
+    &__mobile {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 260px;
+        background-color: #fff;
+        transform: translateX(100%);
+        transition: all 0.4s ease;
+
+        &-list {
+            list-style: none;
+            margin-top: 100px;
+        }
+
+        &-item {
+            height: 56px;
+            line-height: 56px;
+            user-select: none;
+            color: var(--color-dark-grayish-blue);
+    
+            &:hover {
+                cursor: pointer;
+                color: var(--color-primary-red);
+            }
+        }
+    }
+}
+
+#header-nav__input:checked {
+    & ~ .header-nav__mobile {
+        transform: translateX(0);
+    }
+    & ~ .header-nav__overlay {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .header-nav__menu-btn {
+        display: block;
+    }
+    .header-nav__pc {
+        display: none;
+    }
+}
+
+
