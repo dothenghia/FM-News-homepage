@@ -1,4 +1,7 @@
 .main {
+    &-thumbnail img:last-child {
+        display: none;
+    }
     &-title h1{
         font-weight: var(--font-extra-bold);
         font-size: 66px;
@@ -41,24 +44,26 @@
     }
 
     &-content {
-        margin: 30px 20px 0;
-        padding-bottom: 12px;
+        margin: 30px 20px 0 !important;
         border-bottom: 1px solid var(--color-grayish-blue);
         &:last-child {
             border: none;
         }
-
+        
         & h4 {
+            padding: 0px;
             color: #fff;
             font-weight: var(--font-bold);
-
+            user-select: none;
             &:hover {
                 color: var(--color-primary-orange);
                 cursor: pointer;
             }
         }
         & p {
+            padding: 0px;
             color: var(--color-grayish-blue);
+            font-size: 18px;
         }
     }
 }
@@ -76,11 +81,186 @@
             color: #000;
             font-size: 20px;
             font-weight: var(--font-bold);
+            user-select: none;
+            &:hover {
+                cursor: pointer;
+                color: var(--color-primary-red);
+            }
         }
         & p {
-            margin-top: 24px;
+            margin-top: 16px;
             color: var(--color-dark-grayish-blue);
         }
     }
 }
 
+@media screen and (max-width: 767px) {
+    .main {
+        &-thumbnail img:first-child {
+            display: none;
+        }
+        &-thumbnail img:last-child {
+            display: block;
+        }
+        &-title h1{
+            font-size: 40px;
+            line-height: 48px;
+        }
+        &-paragraph {
+            & p {
+                font-size: 14.5px;
+            }
+        }
+    }
+
+    .sub {
+        &-content {
+            & h4 {
+                color: #000;
+                font-size: 18px;
+            }
+            & p {
+                margin-top: 8px;
+                font-size: 15px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px){
+    .main {
+        &-title h1{
+            font-size: 40px;
+            line-height: 44px;
+        }
+        &-paragraph {
+            & p {
+                font-size: 11px;
+            }
+            & button {
+                font-size: 13px;
+                padding: 10px 24px;
+            }
+        }
+    }
+    
+    .side {
+        &-contents h1 {
+            padding: 30px 0 0 6px;
+            font-size: 28px;
+        }
+    
+        &-content {
+            margin: 20px 6px 0 !important;            
+            & h4 {
+                font-size: 14px;
+            }
+            & p {
+                font-size: 11px;
+            }
+        }
+    }
+    
+    .sub {
+        &-content {
+            & h1 {
+                font-size: 18px;
+            }
+            & h4 {
+                font-size: 11px;
+            }
+            & p {
+                margin-top: 4px;
+                font-size: 8px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px){
+    .main {
+        &-title h1{
+            font-size: 50px;
+            line-height: 52px;
+        }
+        &-paragraph p {
+            font-size: 13px;
+        }
+    }
+    
+    .side {
+        &-contents h1 {
+            padding: 30px 0 0 12px;
+            font-size: 30px;
+        }
+    
+        &-content {
+            margin: 30px 12px 0 !important;            
+            & h4 {
+                font-size: 18px;
+            }
+            & p {
+                font-size: 14px;
+            }
+        }
+    }
+    
+    .sub {
+        &-content {
+            & h1 {
+                font-size: 24px;
+            }
+            & h4 {
+                font-size: 16px;
+            }
+            & p {
+                margin-top: 10px;
+                font-size: 13px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1399px){
+    .main {
+        &-title h1{
+            font-size: 60px;
+            line-height: 56px;
+        }
+        &-paragraph p {
+            font-size: 16px;
+        }
+    }
+    
+    .side {
+        &-contents h1 {
+            padding: 30px 0 0 12px;
+            font-size: 36px;
+        }
+    
+        &-content {
+            margin: 30px 12px 0 !important;            
+            & h4 {
+                font-size: 22px;
+            }
+            & p {
+                font-size: 17px;
+            }
+        }
+    }
+    
+    .sub {
+        &-content {
+            & h1 {
+                font-size: 28px;
+            }
+            & h4 {
+                font-size: 19px;
+            }
+            & p {
+                margin-top: 10px;
+                font-size: 15px;
+            }
+        }
+    }
+}
