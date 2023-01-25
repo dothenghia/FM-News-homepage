@@ -38,7 +38,7 @@ In Mobile version
 
 - Solution URL: https://github.com/dothenghia/FM-News-homepage
 
-- Live Site URL: https://github.com/dothenghia/FM-News-homepage
+- Live Site URL: https://dothenghia.github.io/FM-News-homepage/
 
 ## 2/ My process
 
